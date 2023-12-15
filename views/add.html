@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une actualité</title>
+    <style>
+        body {
+              font-family: 'Oxygen', sans-serif;
+              margin: auto;
+              width: 30%;
+              background-color: #f6f5f5;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+              }
+        form{
+              border-radius: 25px;
+              background: white;
+              box-shadow: 15px 15px 30px #bebebe,
+              -15px -15px 30px #ffffff;
+              transition: 0.2s ease-in-out;
+              padding: 30px;
+              max-width: 400px;
+              width: 100%;
+              text-align: center;
+              
+        }
+        .a {
+        align-items: center;
+        appearance: none;
+        background-color: #fff;
+        border-radius: 24px;
+        border-style: none;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+        box-sizing: border-box;
+        color: #3c4043;
+        cursor: pointer;
+        display: inline-flex;
+        fill: currentcolor;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 48px;
+        justify-content: center;
+        letter-spacing: .25px;
+        line-height: normal;
+        max-width: 100%;
+        overflow: visible;
+        padding: 2px 24px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        will-change: transform,opacity;
+        z-index: 0;
+}
+
+.a:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.a:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.a:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.a:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.a:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.a:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.a:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.a:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s; /* Ajout de transition pour la bordure */
+}
+textarea:hover{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #F6F9FE;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s; /* Ajout de transition pour la bordure */
+}
+.bb{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s; /* Ajout de transition pour la bordure */
+}
+.bb:hover{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #F6F9FE;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s; /* Ajout de transition pour la bordure */
+}
+label{
+    display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #262626;
+}
+h1{
+    color: #3c4043;
+}
+ </style>          
+</head>
+<body>
+    <form action="/addnews" method="get">
+        <h1>
+            Add news </h1>
+        <label>Titre :</label>
+        <br>
+        <input type="text" class="bb" name="letitre" />
+        <br><br>
+        <label>Description :</label>
+        <br>
+        <textarea name="ladescription"></textarea>
+        <br><br>
+        <input type="submit" class="a" value="Ajouter">
+    </form>
+</body>
+</html>
